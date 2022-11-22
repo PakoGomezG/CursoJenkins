@@ -1,48 +1,27 @@
-def fecha = new Date()
+def clima = 'Frio Invernal'
 def ciudad = 'Vitoria-Gasteiz'
-def num1 = 5
-def num2 = 6
+def habitantes = 250000
 pipeline {
     agent any
     stages {
-        stage('MostrarFecha') {
+        stage('MostrarClima') {
             steps {
-                echo "Fecha actual: $fecha"
+                echo "Clima: $clima"
             }
         }
-        stage('MostrarCiudad') {
+        stage('MostrarHabitantes') {
             steps {
-                echo "Ciudad: $ciudad"
+                echo "Poblacion actual: $habitantes"
             }
         }
-        stage('MostrarUsuario') {
+        stage('MostrarPoblacionNeta') {
             steps {
-                wrap([$class: 'BuildUser']) {
-                  script {
-                     USER_ID = "${BUILD_USER}"
-                  }
-                }
-                echo "Usuario: ${USER_ID}"
-            }
-        }
-        stage('Operaciones') {
-            steps {
-                script {
-                    def suma = num1 + num2
-                    def resta = num1 - num2
-                    def multiplicacion = num1 * num2
-                    echo "Suma = $suma"
-                    echo "Resta = $resta"
-                    echo "Multiplicacion = $multiplicacion"
-                    if (num2 == 0) {
-                        echo "No se puede dividir entre 0"
-                    }
-                    else {
-                        def division = num1 / num2
-                        echo "Division = $division"
-                    }
-                }
+				calcularPoblacionNeta(habitantes)
             }
         }
     }
+}
+def calcularPoblacionNeta(Integer poblacion) {
+    def poblacionNeta = poblacion / 2
+    echo "Poblacion neta: $poblacionNeta"
 }
