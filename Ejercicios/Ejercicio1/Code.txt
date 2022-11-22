@@ -1,3 +1,4 @@
+// Plugin utilizado build user vars plugin Versión 1.9
 def fecha = new Date()
 def ciudad = 'Vitoria-Gasteiz'
 def num1 = 5
