@@ -43,12 +43,9 @@ pipeline {
 }
 def calcularSalarioNeto(Integer salario) {
     script {
-        def salNeto = 0
+        def salNeto = salario
     	if (salario > 1000) {
     		salNeto = salario * 0.8
-    	}
-    	else {
-    		salNeto = salario
     	}
         echo "Salario neto: $salNeto"
     }
