@@ -1,0 +1,51 @@
+Lanzada por el usuario Javier Lopez
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins  in C:\ProgramData\Jenkins\.jenkins\workspace\Ejercicio1
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (MostrarFecha)
+[Pipeline] echo
+Fecha actual: Tue Nov 22 09:58:38 CET 2022
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (MostrarCiudad)
+[Pipeline] echo
+Ciudad: Vitoria-Gasteiz
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (MostrarUsuario)
+[Pipeline] wrap
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // wrap
+[Pipeline] echo
+Usuario: Javier Lopez
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Operaciones)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Suma = 11
+[Pipeline] echo
+Resta = -1
+[Pipeline] echo
+Multiplicacion = 30
+[Pipeline] echo
+Division = 0.8333333333
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

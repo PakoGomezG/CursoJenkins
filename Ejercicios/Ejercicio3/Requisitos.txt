@@ -1,0 +1,17 @@
+EJERCICIO 3:
+Desarrollar un pipeline desde Github que genere la siguiente información por consola:
+- Top 5 de peliculas favoritas
+- Comida favorita
+- Signo zodiacal
+- Puesto actual
+- Salario bruto
+- Salario Neto
+
+Donde el salario neto es el salario  bruto multiplicado por 0*80
+
+Si el salario bruto es mayor a 1000 euros, entonces no se multiplica, si lo es se aplica la multiplicación
+
+
+ENTREGABLES:
+- Captura de pantalla de consola
+- Link del repositorio

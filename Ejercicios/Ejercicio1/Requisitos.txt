@@ -1,0 +1,11 @@
+EJERCICIO 1
+Desarrollar un pipeline en jenkins que devuelva la siguiente informacion por consola:
+- fecha actual
+- ciudad donde resides
+- nombre del ejecutante
+-suma, resta, division y multiplicación de 2 numeros declarados previamente
+- en el stage de la division se debe tener un IF que valide que el numero no sea 0, si es 0 arrojar mensaje de error
+
+ENTREGABLES:
+- codigo del pipeline
+- captura de pantalla

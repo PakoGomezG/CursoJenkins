@@ -1,0 +1,13 @@
+EJERCICIO 2:
+Desde GitHub generar un jenkinsfile que informe lo siguiente:
+- Clima actual de tu ciudad
+- Cantidad de habitantes
+Implementar una función que calcule la Población neta
+- Población neta:
+  Donde la población neta es la cantidad de habitantes dividido 2
+
+Luego, Jenkins debe mostrar la información por consola.
+
+ENTREGABLES:
+- Link del repositorio
+- Captura de pantalla de la consola de Jenkins mostrando la info
