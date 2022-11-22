@@ -1,0 +1,15 @@
+EJERCICIO 4:
+(!) NO SOMOS ARABIA SAUDITA (!)
+
+Desarrollar un pipeline que informe en base a la hora del día si tiene que correrse o no el stage indicado.
+Si son mas de las 12 del mediodía se corre el proceso, si son menos de las 12, no se corre.
+Si el stage indicado se corre, se informa lo siguiente:
+- Usuario que corre el proceso
+- ID del usuario 
+- Version de Java desde el bat a traves de una función. 
+
+(!) Este Pipeline debe trabajar desde la rama de Desarrollo. (!) 
+
+ENTREGABLES:
+- LINK del repositorio con el jenkinsfile
+- Captura de pantalla de la consola de Jenkins
