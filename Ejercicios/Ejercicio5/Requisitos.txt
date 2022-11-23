@@ -1,0 +1,10 @@
+EJERCICIO MODELO DE EXAMEN:
+Desarrollar un pipeline a traves de un
+jenkinsfile (GitHub) que en base al día de la semana en el que se encuentre realice distintas acciones.
+- Si el día es lunes se debe informar el clima actual en tu ciudad
+- Si el día es martes se debe informar la suma de los siguientes numeros: 150 y 350
+- Si el día es miercoles se debe informar el numero PI por consola
+- Si el día es jueves se debe informar que usuario ejecuto el pipeline (nombre ficticio)
+- Si el día es Viernes se debe ejecutar el comando BAT que informe la version de java del computador 
+"bat java -version"
+- Si es sabado o domingo, no hacer nada.
