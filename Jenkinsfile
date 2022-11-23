@@ -1,58 +1,39 @@
-// Plugin utilizado build user vars plugin Versión 1.9
-def clima = "Frio"
-def num1 = 150
-def num2 = 350
-def pi = 3.14159
-// Definimos path de java al no estar instalado
-def java_path = "C:\\temp\\jdk-17.0.5\\bin"
-def dia = new Date().getDay()
-
+// Definimos path de git al no estar instalado
+def git_path = "E:\\OneDrive - GFI\\Formacion\\PortableGit\\bin"
+def hora = new Date().format("H").toInteger()
 
 pipeline {
     agent any
     stages {
         stage('MostrarInfo') {
             steps {
+                echo "Son las ${hora}"
                 script {
-                    wrap([$class: 'BuildUser']) {
-                        script {
-                            USER = "${BUILD_USER}"
-                        }
+                    if (hora > 0 && hora < 10) {
+                        mostrarIpConfig()
                     }
-                    echo "DIA: ${dia}"
-                    switch(dia) {
-                        case 1:
-                            echo "Hoy es Lunes";
-                            echo "Clima: $clima";
-                            break;
-                        case 2:
-                            echo "Hoy es Martes";
-                            echo "Suma: ${num1+num2}";
-                            break;
-                        case 3:
-                            echo "Hoy es Miercoles";
-                            echo "Numero pi: ${pi}";
-                            break;
-                        case 4:
-                            echo "Hoy es Jueves";
-                            echo "Usuario que ejecuta el pipeline: ${USER}";
-                            break;
-                        case 5:
-                            echo "Hoy es Viernes";
-                            mostrarVersionJava(java_path);
-                            break;
-                        default:
-                            echo "Hoy es Sabado o Domingo, no se hace nada";
-                            break;
+                    else if (hora > 11 && hora < 15) {
+                        mostrarGitVersion(git_path)
+                    }
+                    else if (hora > 16 && hora < 22) {
+                        mostrarHora()
+                    }
+                    else {
+                        echo "No se hace nada"
                     }
                 }
             }
         }
     }
 }
-def mostrarVersionJava(String java_path) {
-    //bat '"$java_path" -version'
+def mostrarGitVersion(String git_path) {
     bat """
-        "${java_path}\\java.exe" -version
+        "${git_path}\\git.exe" --version
     """
+}
+def mostrarIpConfig() {
+    bat "ipconfig /flushdns"
+}
+def mostrarHora() {
+    bat "time /t"
 }
