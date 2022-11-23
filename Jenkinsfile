@@ -1,25 +1,51 @@
 // Plugin utilizado build user vars plugin Versión 1.9
-def dateNow = new Date()
-def hour = dateNow.format("HH").toInteger()
+def clima = "Frio"
+def num1 = 150
+def num2 = 350
+def pi = 3.14159
 // Definimos path de java al no estar instalado
 def java_path = "C:\\temp\\jdk-17.0.5\\bin"
+def dia = new Date().getDay()
+
+
 pipeline {
     agent any
     stages {
         stage('MostrarInfo') {
-            when {
-                expression { hour >= 12 }
-            }
             steps {
-                wrap([$class: 'BuildUser']) {
-                    script {
-                        USER = "${BUILD_USER}"
-                        USER_ID = "${BUILD_USER_ID}"
+                script {
+                    wrap([$class: 'BuildUser']) {
+                        script {
+                            USER = "${BUILD_USER}"
+                        }
+                    }
+                    echo "DIA: ${dia}"
+                    switch(dia) {
+                        case 1:
+                            echo "Hoy es Lunes";
+                            echo "Clima: $clima";
+                            break;
+                        case 2:
+                            echo "Hoy es Martes";
+                            echo "Suma: ${num1+num2}";
+                            break;
+                        case 3:
+                            echo "Hoy es Miercoles";
+                            echo "Numero pi: ${pi}";
+                            break;
+                        case 4:
+                            echo "Hoy es Jueves";
+                            echo "Usuario que ejecuta el pipeline: ${USER}";
+                            break;
+                        case 5:
+                            echo "Hoy es Viernes";
+                            mostrarVersionJava(java_path);
+                            break;
+                        default:
+                            echo "Hoy es Sabado o Domingo, no se hace nada";
+                            break;
                     }
                 }
-                echo "Usuario: ${USER}"
-                echo "Usuario ID: ${USER_ID}"
-                mostrarVersionJava(java_path)
             }
         }
     }
